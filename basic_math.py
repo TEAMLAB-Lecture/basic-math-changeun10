@@ -24,8 +24,7 @@ def get_greatest(number_list):
             >>> bm.get_greatest(number_list)
             99
     """
-    greatest_number = None
-    return greatest_number
+    return max(number_list)
 
 
 def get_smallest(number_list):
@@ -45,8 +44,7 @@ def get_smallest(number_list):
             >>> bm.get_smallest(number_list)
             11
     """
-    smallest_number = None
-    return smallest_number
+    return min(number_list)
 
 
 def get_mean(number_list):
@@ -66,11 +64,16 @@ def get_mean(number_list):
             >>> bm.get_mean(number_list)
             47
     """
-    mean = None
-    return mean
+    return sum(number_list)/len(number_list)
 
 
 def get_median(number_list):
+    number_list.sort()
+    k=len(number_list)
+    if len(number_list)%2==1:
+        return number_list[(k-1)//2]
+    else:
+        return (number_list[(k//2)]+number_list[(k//2)-1])/2
     """
     주어진 리스트 숫자들의 중간값을 구함.
 
@@ -90,5 +93,3 @@ def get_median(number_list):
             >>> bm.get_median(number_list2)
             35.5
     """
-    median = None
-    return median
